@@ -46,7 +46,4 @@ const validateEmailExist = function ($http, $q) {
     }
 };
 
-export default {
-    validateUsernameExist: validateUsernameExist,
-    validateEmailExist: validateEmailExist
-}
+export {validateUsernameExist, validateEmailExist}
