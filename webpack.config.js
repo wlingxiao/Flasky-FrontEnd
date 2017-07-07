@@ -24,12 +24,8 @@ module.exports = {
         contentBase: './src/public',
         stats: 'minimal',
         proxy: {
-            '/post': {
-                target: 'http://127.0.0.1:5000',
-                changeOrigin: true
-            },
-            '/auth': {
-                target: 'http://127.0.0.1:5000',
+            '/api/v1': {
+                target: 'http://127.0.0.1:3000',
                 changeOrigin: true
             }
         }

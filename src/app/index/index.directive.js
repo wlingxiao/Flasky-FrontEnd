@@ -1,14 +1,31 @@
 import indexTpl from './index.tpl.html'
-import indexController from './index.controller'
 
-export default function () {
+export default function ($http, postsService) {
     return {
         restrict: 'E',
         template: indexTpl,
-        scope: true,
-        controller: indexController,
+        scope: {},
         link: function (scope, element) {
+            postsService.listPosts().then(function (response) {
+                if (response['status'] === 200) {
+                    scope.posts = transformPosts(response['data']['posts']);
+                }
+            })['catch'](function (error) {
 
+            })
         }
     }
+}
+
+function transformPosts(rawPosts) {
+    const posts = [];
+    rawPosts.map(function (post) {
+        posts.push({
+            id: post['id'],
+            title: post['title'],
+            content: post['content'],
+            createTime: post['create_time']
+        })
+    });
+    return posts;
 }

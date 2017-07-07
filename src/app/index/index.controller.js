@@ -1,5 +1,5 @@
 export default function ($scope, $http) {
-    $http.get('/post/load_all_posts').then(function (response) {
+    $http.get('/posts/').then(function (response) {
         const data = response['data'];
         if (data && data['code'] === 200) {
             const posts = [];
