@@ -5,7 +5,7 @@ export default function () {
         restrict: 'E',
         scope: {},
         template: loginTpl,
-        controller: function ($scope) {
-        }
+        link: function (scope, element) {
+        },
     }
 }

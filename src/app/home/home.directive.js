@@ -1,4 +1,4 @@
-import indexTpl from './index.tpl.html'
+import indexTpl from './home.tpl.html'
 
 export default function ($http, postsService) {
     return {

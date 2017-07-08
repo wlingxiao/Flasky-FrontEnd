@@ -20,7 +20,7 @@ const validateUsernameExist = function ($http, $q) {
             }
         }
     }
-}
+};
 
 const validateEmailExist = function ($http, $q) {
     return {
@@ -46,4 +46,10 @@ const validateEmailExist = function ($http, $q) {
     }
 };
 
-export {validateUsernameExist, validateEmailExist}
+const hasSuccessOrError = function () {
+    return function (input, hasSuccess, hasError) {
+        return input ? hasSuccess : hasError;
+    }
+};
+
+export {validateUsernameExist, validateEmailExist, hasSuccessOrError}
