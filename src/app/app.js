@@ -9,8 +9,9 @@ import routesConfig from './routes.config'
 import './home'
 import './login'
 import './signup'
+import './user'
 
-const app = angular.module('app', ['ui.router', 'home', 'login', 'signup']);
+const app = angular.module('app', ['ui.router', 'home', 'login', 'signup', 'user']);
 
 app.config(apiConfig);
 app.config(routesConfig);

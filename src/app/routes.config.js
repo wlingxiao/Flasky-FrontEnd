@@ -19,7 +19,14 @@ export default function ($stateProvider, $locationProvider) {
         template: '<login></login>'
     };
 
+    const userState = {
+        name: 'viewUser',
+        url: '/view_user',
+        template: '<user-manager></user-manager>'
+    };
+
     $stateProvider.state(homeState);
     $stateProvider.state(loginState);
     $stateProvider.state(signUpState);
+    $stateProvider.state(userState);
 }

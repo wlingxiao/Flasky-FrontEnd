@@ -1,0 +1,102 @@
+<div class="container">
+
+  <div class="form-group">
+    <div class="row">
+
+      <div class="col-sm-1">
+        <label for="username">用户名</label>
+      </div>
+      <div class="col-sm-3">
+        <input id="username" class="form-control" ng-model="username">
+      </div>
+
+      <div class="col-sm-1">
+        <label for="email">邮箱</label>
+      </div>
+      <div class="col-sm-3">
+        <input id="email" class="form-control" ng-model="email">
+      </div>
+
+    </div>
+    <h1></h1>
+    <div class="row">
+
+      <!-- 注册时间 -->
+      <div class="col-sm-1">
+        <label for="sign-up-time-start">注册时间</label>
+      </div>
+      <div class="col-sm-4">
+        <div id="sign-up-time" class="row">
+          <div class="col-sm-5 input-daterange">
+            <input id="sign-up-time-start" class="form-control" ng-model="signUpTimeStart" name="start">
+          </div>
+          <div class="col-sm-2">
+            <span>到</span>
+          </div>
+          <div class="col-sm-5 input-daterange">
+            <input id="sign-up-time-end" class="form-control" ng-model="signUpTimeEnd" name="end">
+          </div>
+        </div>
+      </div>
+
+      <!-- 最后登录时间 -->
+
+      <div class="col-sm-1">
+        <label for="last-login-time-start">最后登录时间</label>
+      </div>
+      <div id="last-login-time" class="col-sm-4">
+        <div class="row">
+          <div class="col-sm-5 input-daterange">
+            <input id="last-login-time-start" class="form-control" name="start"
+                   ng-model="lastVisitTimeStart">
+          </div>
+          <div class="col-sm-2">
+            <span>到</span>
+          </div>
+          <div class="col-sm-5 input-daterange">
+            <input id="last-login-time-end" class="form-control" name="end"
+                   ng-model="lastVisitTimeEnd">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-1">
+        <button class="btn btn-primary" type="button" ng-click="searchUser()">查询</button>
+      </div>
+      <div class="col-sm-1">
+        <button class="btn btn-primary" type="button" ng-click="resetSearch()">清空</button>
+      </div>
+    </div>
+  </div>
+
+  <div style="min-height: 700px">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>用户名</th>
+        <th>邮箱</th>
+        <th>注册时间</th>
+        <th>最后登录时间</th>
+        <th>操作</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="item in users" ng-cloak>
+        <td>{{ item.username }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.signUpTime }}</td>
+        <td>{{ item.lastVisitTime }}</td>
+        <td>
+          <view-user></view-user>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="text-align: right;">
+    <div>共 <span ng-bind="totalPage"></span> 页</div>
+    <ul first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页" uib-pagination
+        total-items="totalItems" ng-model="currentPage" max-size="maxSize" ng-change="pageChanged()"
+        class="pagination-sm" boundary-links="true" force-ellipses="true"></ul>
+  </div>
+</div>
