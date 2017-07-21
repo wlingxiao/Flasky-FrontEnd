@@ -1,6 +1,6 @@
 import indexTpl from './home.tpl.html'
 
-export default function ($http, postsService) {
+export default function ($http, postsService, $log) {
     return {
         restrict: 'E',
         template: indexTpl,
@@ -8,10 +8,11 @@ export default function ($http, postsService) {
         link: function (scope, element) {
             postsService.listPosts().then(function (response) {
                 if (response['status'] === 200) {
-                    scope.posts = transformPosts(response['data']['posts']);
+                    const responseData = response['data'];
+                    scope.posts = transformPosts(responseData['data']);
                 }
             })['catch'](function (error) {
-
+                $log.error(error)
             })
         }
     }
