@@ -10,8 +10,9 @@ import './home'
 import './login'
 import './signup'
 import './user'
+import './post'
 
-const app = angular.module('app', ['ui.router', 'home', 'login', 'signup', 'user']);
+const app = angular.module('app', ['ui.router', 'home', 'login', 'signup', 'user', 'post']);
 
 app.config(apiConfig);
 app.config(routesConfig);
