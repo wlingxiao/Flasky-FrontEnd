@@ -31,8 +31,13 @@ module.exports = {
         }
     },
     devtool: 'inline-source-map',
-    plugins: [new HtmlWebpackPlugin({
-        template: './src/app.html',
-        inject: 'body'
-    })]
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './src/app.html',
+            inject: 'body'
+        }),
+        new webpack.ProvidePlugin({
+            jQuery: 'jquery',
+            $: 'jquery'
+        })]
 };

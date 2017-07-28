@@ -1,1 +1,3 @@
-flasky front end
+#### run json mock server
+`cd mock`  
+`json-server db.js`
