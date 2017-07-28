@@ -1,0 +1,51 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "test hello world",
+      "content": "在你的应用中大多数状态都有与其相关联的 url，路由控制不是设计完成 state 之后的事后想法，而是开始开发时就应该考虑的问题。",
+      "create_time": "1501257196"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "content": "之前看到的$stateParams服务是一个对象，包含 url 中每个参数的键/值。$stateParams可以",
+      "create_date": "1501257196",
+      "from_user_id": 1,
+      "from_user_name": 2,
+      "to_user_id": 1,
+      "to_user_name": 1,
+      "to_comment_id": 1,
+      "to_comment_content": "1501257196",
+      "to_comment_create_time": "1501257196",
+      "post_id": 1
+    },
+    {
+      "id": 2,
+      "content": "之前看到的$stateParams服务是一个对象，包含 url 中每个参数的键/值。$stateParams可以",
+      "create_date": "1501257196",
+      "from_user_id": 1,
+      "from_user_name": 2,
+      "to_user_id": 1,
+      "to_user_name": 1,
+      "to_comment_id": 1,
+      "to_comment_content": "1501257196",
+      "to_comment_create_time": "1501257196",
+      "post_id": 1
+    },
+    {
+      "id": 3,
+      "content": "之前看到的$stateParams服务是一个对象，包含 url 中每个参数的键/值。$stateParams可以",
+      "create_date": "1501257196",
+      "from_user_id": 1,
+      "from_user_name": 2,
+      "to_user_id": 1,
+      "to_user_name": 1,
+      "to_comment_id": 1,
+      "to_comment_content": "1501257196",
+      "to_comment_create_time": "1501257196",
+      "post_id": 1
+    }
+  ]
+}
