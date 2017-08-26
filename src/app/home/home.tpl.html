@@ -16,7 +16,7 @@
             <li><a ui-sref="index">首页</a></li>
             <li><a ui-sref="login">登录</a></li>
             <li><a ui-sref="signUp">注册</a>
-            <li><a href="/post/new_post">新建文章</a></li>
+            <li><a ui-sref="createPost">新建文章</a></li>
             <li class="active">
               <a ui-sref="viewUser">用户管理</a>
             </li>
@@ -41,24 +41,43 @@
   <!-- 内容正文区 -->
   <div class="container">
     <div class="row">
-      <div class="col-md-7">
-
+      <div class="col-md-9">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4>文章</h4>
           </div>
           <div class="panel-body" ng-cloak>
             <div ng-repeat="post in posts">
-              <h4><a href="/post/{{ post.id }}">{{ post.title }}</a></h4>
-              <p>{{ post.content }}</p>
-              <span>{{ post.createTime | date:'yyyy-MM-dd' }}</span>
+              <div class="post-card clearfix">
+                <div class="post-pic clearfix">
+                  <a href="/post/{{ post.id }}">
+                    <img
+                        src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1501945992773&di=67e6151e5803f374d2248774cd2bfacf&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F7%2F57c3dc1de651d.jpg">
+                  </a>
+                </div>
+                <div>
+                  <div>
+                    <a href="/post/{{ post.id }}">{{ post.title }}</a>
+                  </div>
+                  <div>
+                    <span>{{ post.createTime | date:'yyyy-MM-dd' }}</span>
+                  </div>
+                  <div>
+                    <p>{{ post.content}}</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-
       </div>
-      <div class="col-md-5">f</div>
+      <div class="col-md-3">未完待续</div>
     </div>
   </div>
-
+  <div>
+    <ul first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页" uib-pagination
+        total-items="totalItems" ng-model="currentPage" max-size="maxSize" ng-change="pageChanged()"
+        class="pagination-sm" boundary-links="true" force-ellipses="true">
+    </ul>
+  </div>
 </div>
