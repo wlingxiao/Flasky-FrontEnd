@@ -51,8 +51,7 @@
               <div class="post-card clearfix">
                 <div class="post-pic clearfix">
                   <a href="/post/{{ post.id }}">
-                    <img
-                        src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1501945992773&di=67e6151e5803f374d2248774cd2bfacf&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F7%2F57c3dc1de651d.jpg">
+                    <img ng-src="{{post.image}}">
                   </a>
                 </div>
                 <div>
@@ -69,15 +68,17 @@
               </div>
             </div>
           </div>
+          <div class="panel-footer clearfix">
+            <ul first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页" uib-pagination
+                total-items="totalItems" ng-model="currentPage" max-size="maxSize" ng-change="pageChanged()"
+                class="pagination-sm" boundary-links="true" force-ellipses="true">
+            </ul>
+          </div>
         </div>
+
+
       </div>
       <div class="col-md-3">未完待续</div>
     </div>
-  </div>
-  <div>
-    <ul first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页" uib-pagination
-        total-items="totalItems" ng-model="currentPage" max-size="maxSize" ng-change="pageChanged()"
-        class="pagination-sm" boundary-links="true" force-ellipses="true">
-    </ul>
   </div>
 </div>

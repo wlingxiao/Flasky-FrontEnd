@@ -9,6 +9,9 @@ export default function ($http, postsService, $log) {
             postsService.listPosts().then(function (response) {
                 if (response['status'] === 200) {
                     const responseData = response['data'];
+                    scope.totalItems = responseData['size'];
+                    scope.currentPage = 1;
+                    scope.maxSize = 5;
                     scope.posts = transformPosts(responseData['data']);
                 }
             })['catch'](function (error) {
@@ -25,7 +28,9 @@ function transformPosts(rawPosts) {
             id: post['id'],
             title: post['title'],
             content: post['content'],
-            createTime: post['create_time']
+            createTime: post['create_time'],
+            image: post['image']
+
         })
     });
     return posts;

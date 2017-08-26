@@ -16,3 +16,8 @@
 .post-pic img {
     width: 200px;
 }
+
+.panel-footer ul {
+    float: right;
+    margin: 0;
+}
