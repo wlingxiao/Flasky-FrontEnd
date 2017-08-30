@@ -27,7 +27,7 @@ function transformPosts(rawPosts) {
         posts.push({
             id: post['id'],
             title: post['title'],
-            content: post['content'],
+            summary: post['summary'],
             createTime: post['create_time'],
             image: post['image']
 

@@ -2,7 +2,7 @@
   <nav class="navbar navbar-default" role="navigation">
     <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">知乎</a>
+        <a class="navbar-brand" href="#">首页</a>
       </div>
       <div>
         <form class="navbar-form navbar-left" role="search">
@@ -13,7 +13,7 @@
         </form>
         <div>
           <ul class="nav navbar-nav">
-            <li><a ui-sref="index">首页</a></li>
+            <li><a href="/">日报</a></li>
             <li><a ui-sref="login">登录</a></li>
             <li><a ui-sref="signUp">注册</a>
             <li><a ui-sref="createPost">新建文章</a></li>
@@ -62,7 +62,7 @@
                     <span>{{ post.createTime | date:'yyyy-MM-dd' }}</span>
                   </div>
                   <div>
-                    <p>{{ post.content}}</p>
+                    <p>{{ post.summary}}</p>
                   </div>
                 </div>
               </div>
@@ -75,7 +75,6 @@
             </ul>
           </div>
         </div>
-
 
       </div>
       <div class="col-md-3">未完待续</div>

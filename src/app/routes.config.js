@@ -34,9 +34,16 @@ export default function ($stateProvider, $locationProvider) {
         }
     };
 
+    const createPostState = {
+        name: 'createPost',
+        url: '/create_post',
+        template: '<create-post></create-post>'
+    };
+
     $stateProvider.state(homeState);
     $stateProvider.state(loginState);
     $stateProvider.state(signUpState);
     $stateProvider.state(userState);
     $stateProvider.state(postState);
+    $stateProvider.state(createPostState);
 }

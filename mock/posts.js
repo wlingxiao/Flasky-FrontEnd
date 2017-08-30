@@ -6,12 +6,13 @@ module.exports = function () {
         size: 100,
         data: []
     };
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 10; i++) {
         posts.data.push({
             id: i,
-            title: faker.name.findName(),
+            title: faker.lorem.sentence(),
             content: faker.lorem.text(),
-            'create_time': Date.parse(faker.date.past())
+            'create_time': Date.parse(faker.date.past()),
+            'image': faker.image.nature()
         })
     }
     return posts

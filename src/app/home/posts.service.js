@@ -1,6 +1,6 @@
 export default function ($http, $httpParamSerializerJQLike) {
 
-    const postUrl = '/posts';
+    const postUrl = '/dailies';
 
     this.listPosts = function (offset, limit) {
         if (!limit) {
