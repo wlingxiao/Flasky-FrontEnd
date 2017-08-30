@@ -22,13 +22,13 @@ module.exports = {
     devServer: {
         historyApiFallback: true, // angularjs ui router html5mode
         contentBase: './src/public',
-        stats: 'minimal',
-        proxy: {
+        stats: 'minimal'
+        /*proxy: {
             '/api/v1': {
                 target: 'http://127.0.0.1:8081',
                 changeOrigin: true
             }
-        }
+        }*/
     },
     devtool: 'inline-source-map',
     plugins: [

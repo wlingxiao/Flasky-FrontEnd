@@ -11,8 +11,9 @@ import './login'
 import './signup'
 import './user'
 import './post'
+import './daily'
 
-const app = angular.module('app', ['ui.router', 'home', 'login', 'signup', 'user', 'post']);
+const app = angular.module('app', ['ui.router', 'home', 'login', 'signup', 'user', 'post', 'daily']);
 
 app.config(apiConfig);
 app.config(routesConfig);

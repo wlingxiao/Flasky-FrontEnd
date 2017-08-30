@@ -40,10 +40,20 @@ export default function ($stateProvider, $locationProvider) {
         template: '<create-post></create-post>'
     };
 
+    const viewDailyState = {
+        name: 'viewDaily',
+        url: '/view_news/:newsId',
+        template: '<view-news news-id="{{ newsId }}"></view-news>',
+        controller: function ($scope, $stateParams) {
+            $scope.newsId = $stateParams.newsId
+        }
+    }
+
     $stateProvider.state(homeState);
     $stateProvider.state(loginState);
     $stateProvider.state(signUpState);
     $stateProvider.state(userState);
     $stateProvider.state(postState);
     $stateProvider.state(createPostState);
+    $stateProvider.state(viewDailyState);
 }
